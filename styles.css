@@ -1,0 +1,217 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #263247;
+    background-color: #f4f7fb;
+}
+
+a {
+    color: inherit;
+}
+
+/* Navigation bar using Flexbox */
+.site-header {
+    background-color: #172554;
+    color: white;
+}
+
+.navbar {
+    max-width: 1100px;
+    min-height: 76px;
+    margin: 0 auto;
+    padding: 16px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #93c5fd;
+}
+
+/* Main content */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.hero {
+    padding: 48px 24px;
+    text-align: center;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(23, 37, 84, 0.08);
+}
+
+.eyebrow {
+    color: #2563eb;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.primary-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Three-column layout using CSS Grid */
+.features {
+    padding: 48px 0;
+}
+
+.features h2,
+.about h2 {
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card {
+    padding: 24px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(23, 37, 84, 0.05);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(23, 37, 84, 0.12);
+}
+
+.card-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 28px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #526078;
+}
+
+.card a {
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+/* About section */
+.about {
+    margin-bottom: 24px;
+    padding: 28px;
+    border-radius: 14px;
+    background: #e8efff;
+    text-align: center;
+}
+
+/* Footer */
+.site-footer {
+    padding: 22px;
+    background: #172554;
+    color: white;
+    text-align: center;
+}
+
+/* Tablet layout */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 520px) {
+    .container {
+        padding: 20px 16px;
+    }
+
+    .hero {
+        padding: 32px 18px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
