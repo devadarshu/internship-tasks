@@ -1,53 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A responsive webpage using CSS Flexbox and Grid.">
-    <title>CSS Layout Practice</title>
+    <meta name="description" content="A mobile-first responsive webpage demonstrating CSS media queries.">
+    <title>Responsive Design | Day 4</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
-</html>
 <body>
     <header class="site-header">
         <nav class="navbar" aria-label="Main navigation">
-            <a href="#" class="logo">ES6+ Product Explorer</a>
+            <a class="logo" href="#home">Responsive Studio</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main class="container">
+    <main id="home" class="container">
         <section class="hero">
-            <p class="eyebrow">WEEK 1 · DAY 3</p>
-            <h1>JavaScript ES6+ Basics</h1>
+            <p class="eyebrow">WEEK 1 · DAY 4</p>
+            <h1>One Design, Every Screen</h1>
             <p>
-                Explore arrow functions, destructuring,
-                array methods, and event listeners.
+                A mobile-first webpage that adapts to phones,
+                tablets, laptops, and desktop screens.
             </p>
+            <a class="primary-button" href="#features">Explore Features</a>
         </section>
 
-        <section class="features" aria-labelledby="products-title">
-            <h2 id="products-title">Product List</h2>
+        <section id="features" class="features">
+            <h2>Responsive Design Features</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <span class="card-icon" aria-hidden="true">📱</span>
+                    <h3>Mobile First</h3>
+                    <p>Start with a simple layout that works on small screens.</p>
+                </article>
 
-            <p id="count" aria-live="polite"></p>
+                <article class="card">
+                    <span class="card-icon" aria-hidden="true">▦</span>
+                    <h3>Flexible Layout</h3>
+                    <p>Use CSS Grid, Flexbox, and relative units to adapt.</p>
+                </article>
 
-            <button id="filter-button" class="primary-button" type="button">
-                Show In-Stock Products
-            </button>
+                <article class="card">
+                    <span class="card-icon" aria-hidden="true">🖥️</span>
+                    <h3>Media Queries</h3>
+                    <p>Adjust columns, spacing, and navigation at breakpoints.</p>
+                </article>
+            </div>
+        </section>
 
-            <div id="product-list" class="card-grid"></div>
-
-            <p class="total">
-                Total displayed product value:
-                <strong id="total">₹0</strong>
+        <section id="about" class="about">
+            <h2>Built for Every Device</h2>
+            <p>
+                This page uses mobile-first CSS and media queries
+                to deliver a comfortable browsing experience.
             </p>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 JavaScript ES6+ Internship Task</p>
+        <p>&copy; 2026 Responsive Studio | Internship Day 4</p>
     </footer>
-
-    <script src="script.js" defer></script>
 </body>
 </html>
