@@ -215,3 +215,46 @@ a {
         padding: 20px;
     }
 }
+
+
+/* Day 3 JavaScript product explorer */
+#filter-button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.card-grid {
+    margin-top: 24px;
+}
+
+.product-card {
+    padding: 24px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(23, 37, 84, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(23, 37, 84, 0.12);
+}
+
+.available {
+    color: #15803d;
+    font-weight: bold;
+}
+
+.unavailable {
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+.total {
+    margin-top: 24px;
+    padding: 18px;
+    background: #e8efff;
+    border-radius: 10px;
+}
