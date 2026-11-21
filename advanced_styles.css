@@ -1,0 +1,186 @@
+
+/* ==================================
+   WEEK 2 - DAY 1: CSS ADVANCED
+   ================================== */
+
+/* 1. CSS Custom Properties */
+:root {
+    --bg-color: #f4f7fb;
+    --text-color: #263248;
+    --card-color: #ffffff;
+    --primary-color: #2563eb;
+    --border-color: #dce4f0;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+    --card-color: #1f2937;
+    --primary-color: #60a5fa;
+    --border-color: #374151;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply Theme */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease,
+                color 0.4s ease;
+}
+
+/* 2. Theme Toggle Button */
+.theme-toggle {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* 3. Sticky Navigation */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--card-color);
+    box-shadow: var(--shadow);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+/* 4. Pseudo Elements */
+.hero h1 {
+    position: relative;
+    display: inline-block;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 4px;
+    margin: 8px auto;
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #06b6d4
+    );
+    border-radius: 5px;
+}
+
+.card {
+    position: relative;
+    background-color: var(--card-color);
+    color: var(--text-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card::before {
+    content: "FEATURE";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* 5. Loading Spinner */
+.loading-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    margin: 20px auto;
+    border: 5px solid var(--border-color);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 6. Animated Progress Bar */
+.progress-container {
+    width: 100%;
+    max-width: 500px;
+    height: 18px;
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: var(--border-color);
+    border-radius: 20px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #06b6d4
+    );
+    border-radius: 20px;
+    animation: progress 3s ease forwards;
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: 75%;
+    }
+}
+
+/* 7. Responsive Theme Button */
+@media (max-width: 480px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .theme-toggle {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+/* Accessibility: Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
