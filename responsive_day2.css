@@ -1,0 +1,420 @@
+
+/* =========================================
+   WEEK 2 - DAY 2: RESPONSIVE DESIGN
+   Mobile-first CSS
+========================================= */
+
+/* 1. GLOBAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-padding {
+    padding: 4rem 0;
+}
+
+/* 2. NAVIGATION - FLEXBOX */
+
+.site-header {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.logo,
+.footer-logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.logo span,
+.footer-logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-links a,
+.footer-links a {
+    color: #475569;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.footer-links a:hover {
+    color: #2563eb;
+}
+
+.nav-button,
+.primary-button {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.75rem 1.3rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.nav-button:hover,
+.primary-button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+/* 3. HERO SECTION - FLEXBOX */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.eyebrow {
+    color: #2563eb;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero-description {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 0.75rem 1.3rem;
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    border-radius: 8px;
+}
+
+.hero-card {
+    width: 100%;
+    min-height: 260px;
+    padding: 2rem;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-icon {
+    font-size: 3rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.hero-card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.hero-card p {
+    color: #64748b;
+}
+
+.hero-decoration {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.1);
+    right: -30px;
+    bottom: -35px;
+}
+
+/* 4. SECTION HEADINGS */
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+}
+
+.section-heading h2,
+.about-section h2 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    margin-bottom: 0.8rem;
+}
+
+.section-heading > p:last-child {
+    color: #64748b;
+}
+
+/* 5. FEATURES - CSS GRID */
+
+.features {
+    background-color: #eef4ff;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 0.7rem;
+}
+
+.feature-card p {
+    color: #64748b;
+}
+
+/* 6. TESTIMONIALS - CSS GRID */
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    padding: 2rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+.stars {
+    color: #f59e0b;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card h3 {
+    font-size: 1rem;
+}
+
+.testimonial-card span {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+
+/* 8. FOOTER */
+
+.site-footer {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.footer-logo {
+    color: #ffffff;
+}
+
+.footer-content p {
+    color: #cbd5e1;
+    margin-top: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #334155;
+    padding: 1rem;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   9. TABLET - 768px
+========================================= */
+
+@media (min-width: 768px) {
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .hero {
+        flex-direction: row;
+        min-height: 480px;
+    }
+
+    .hero-card {
+        flex: 0 0 40%;
+        min-height: 320px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* =========================================
+   10. LAPTOP - 1024px
+========================================= */
+
+@media (min-width: 1024px) {
+
+    .hero {
+        min-height: 550px;
+        gap: 4rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section-padding {
+        padding: 5rem 0;
+    }
+}
+
+/* =========================================
+   11. LARGE DESKTOP - 1440px
+========================================= */
+
+@media (min-width: 1440px) {
+
+    .container {
+        max-width: 1320px;
+    }
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-card {
+        min-height: 380px;
+    }
+
+    .feature-card,
+    .testimonial-card {
+        padding: 2.5rem;
+    }
+}
